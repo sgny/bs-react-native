@@ -5,15 +5,16 @@ wip: true
 ---
 
 ```reason
-// For localeId refer to
+// For localeID refer to
 // https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html
 
-type localeId = string;
+type localeID = string;
 
 [@react.component] [@bs.module "react-native"]
 external make:
   (
     ~date: Js.Date.t,
+    ~onChange: Event.syntheticEvent({. "timestamp": float}) => unit=?,
     ~onDateChange: Js.Date.t => unit,
     ~maximumDate: Js.Date.t=?,
     ~minimumDate: Js.Date.t=?,

@@ -7,11 +7,18 @@ wip: true
 ```reason
 include NativeElement;
 
+type pickerIOSChangeEvent = Event.syntheticEvent({
+  .
+  "newValue": 'a,
+  "newIndex": number,
+});
+
 [@react.component] [@bs.module "react-native"]
 external make:
   (
     ~ref: ref=?,
     // Picker props
+    ~onChange: pickerIOSChangeEvent => unit=?,
     ~onValueChange: ('a, int) => unit=?,
     ~selectedValue: 'a=?,
     ~itemStyle: Style.t=?,
