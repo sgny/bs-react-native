@@ -7,6 +7,7 @@ type localeId = string;
 external make:
   (
     ~date: Js.Date.t,
+    ~onChange: Event.syntheticEvent({. "timestamp": float}) => unit=?,
     ~onDateChange: Js.Date.t => unit,
     ~maximumDate: Js.Date.t=?,
     ~minimumDate: Js.Date.t=?,
