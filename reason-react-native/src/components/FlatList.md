@@ -5,6 +5,10 @@ wip: true
 ---
 
 ```reason
+// VirtualizedList props data, getItem, getItemCount and getItemLayout
+// are not supported on FlatList
+// FlatList has its own data prop, specified as array(item)
+
 include VirtualizedListElement;
 
 type separatorComponentProps('item) = {
@@ -32,11 +36,15 @@ external make:
     ~_ListHeaderComponent: unit => React.element=?,
     ~_ListHeaderComponentStyle: Style.t=?,
     ~debug: bool=?,
+    // unsupported prop
     // ~data: 'data, // any collection of 'item
     ~disableVirtualization: bool=?, // deprecated
     ~extraData: 'extraData=?,
+    // unsupported prop
     // ~getItem: ('data, int) => 'item=?,
+    // unsupported prop
     // ~getItemCount: 'data => int=?,
+    // unsupported prop
     // ~getItemLayout: ('data, int) => VirtualizedList.itemLayout=?,
     ~initialNumToRender: int=?,
     ~initialScrollIndex: int=?,
